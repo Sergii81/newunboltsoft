@@ -44,10 +44,10 @@ class TranslationController extends Controller
         $translation = Translation::destroy($id);        
     }
 
-    public function test()
+    public function getWorld()
     {
-    	$translation = Translation::where('learned', 0)->first();
-    	return view('test', ['translation'=> $translation]);
+    	$world = Translation::where('learned', 0)->first();        
+    	return view('test', ['world'=> $world]);
     }
 }
 

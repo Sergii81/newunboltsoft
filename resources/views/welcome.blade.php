@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test</title>
+    <title>Table</title>
     <link rel="stylesheet" href="styles/kendo.common.min.css" />
     <link rel="stylesheet" href="styles/kendo.default.min.css" />
     <link rel="stylesheet" href="styles/kendo.default.mobile.min.css" />
