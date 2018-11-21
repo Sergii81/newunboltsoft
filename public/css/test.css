@@ -1,3 +1,32 @@
+.k-content {
+	margin: 50px auto;
+	width: 50%;
+	text-align: center;
+}
+.word {
+	margin: 10px auto;
+	width: 50%;
+	height: 22px;
+	text-align: center;
+	border: 1px solid #A9A9A9;
+	border-radius: 3px;
+	background-color: #A9A9A9;
+	color: #ffffff;
+}
+.result {
+	margin: 30px auto;
+	width: 50%;
+	height: 50px;
+	text-align: center;
+	border: 1px solid #006400;
+	border-radius: 3px;
+	background-color: #006400;
+	color: #ffffff;
+}
+div .continue {
+	display: none;
+	margin: auto;	
+}
 .k-item {
 	display: inline-block;
 	margin-right: 10px;

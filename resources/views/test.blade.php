@@ -15,17 +15,28 @@
 
 	</head>
 	<body>
-		
+    @if (empty($word))
+        <script type="text/javascript">
+            alert("All words are learned!");
+        </script>
+    @else
 	<div id="example">
 
-	    <div class="demo-section k-content">
-	        <div>	            
-	            <div id="treeview"></div>
-	        </div>
-	        <div style="padding-top: 2em;">
-	            <h4>Status</h4>
+	    <div class="demo-section k-content">            
+	        <div class="word">
+             {{$word->translation}}   
+            </div>
+	        <div class="result">
 	            <p id="result"></p>
 	        </div>
+
+            <div>               
+                <div id="treeview"></div>
+            </div>
+
+            <div>
+                <button class="continue">Continue</button> 
+            </div>
 	    </div>
 
 	    <script>
@@ -35,7 +46,7 @@
 	            check: onCheck,
 	            dataSource: [
 	            	<?php 
-	            	$str = "$world->world";	            	
+	            	$str = $word->word;	            	
 	            	$arr = str_split($str);	
 	            	shuffle($arr);            	
 	            	foreach ($arr as $key): ?>
@@ -45,23 +56,29 @@
 	            
 	        });
 
-	        // function that gathers IDs of checked nodes
-	        function checkedNodeIds(nodes, checkedNodes) {
+	        // 
+
+
+	        function checkedNodeText(nodes, checkedNodes) {                   
 	            for (var i = 0; i < nodes.length; i++) {
-	                if (nodes[i].checked) {
-	                	checkedNodes.push(nodes[i].text);
-	                }	                
-	            }
+                    if (nodes[i].checked) {
+                        checkedNodes.push(nodes[i].text);  
+	                } 
+	            }  
+
+                
 	        }
 
 	        // show checked node IDs on datasource change
 	        function onCheck() {
 	            var checkedNodes = [],
+                    //str = "{{$word->word}}",
 	                treeView = $("#treeview").data("kendoTreeView"),
 	                message;
 
-	            checkedNodeIds(treeView.dataSource.view(), checkedNodes);
-
+                    
+	            checkedNodeText(treeView.dataSource.view(), checkedNodes);
+                
 	            if (checkedNodes.length > 0) {
 	                message = checkedNodes.join("");
 	            } else {
@@ -69,6 +86,7 @@
 	            }
 
 	            $("#result").html(message);
+                $(".continue").css('display', 'block');
 	        }
 	    </script>
 
@@ -76,6 +94,6 @@
 
 	</div>
 
-
+@endif
 	</body>
 </html>

@@ -18,4 +18,4 @@ Route::get('/', function () {
 Route::get('/read', 'TranslationController@read')->name('read');
 Route::post('/create', 'TranslationController@create')->name('create');
 Route::post('/destroy', 'TranslationController@destroy')->name('destroy');
-Route::get('/test', 'TranslationController@getWorld')->name('getWorld');
+Route::get('/test', 'TranslationController@getWord')->name('getWord');

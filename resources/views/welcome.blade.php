@@ -59,7 +59,7 @@
                                 model: {
                                     id: "translation_id",
                                     fields: {
-                                        world: { validation: { required: true } },
+                                        word: { validation: { required: true } },
                                         translation: { validation: { required: true } }                                 
                                     }
                                 }
@@ -73,7 +73,7 @@
                         //height: 550,
                         toolbar: ["create"],
                         columns: [
-                            "world",
+                            "word",
                             { field: "translation", title:"translation", width: "33%" },
                             { command: ["edit", "destroy"], title: "&nbsp;", width: "15%" }],
                         editable: "inline"

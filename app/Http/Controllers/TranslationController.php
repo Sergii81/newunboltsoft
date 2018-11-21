@@ -23,12 +23,12 @@ class TranslationController extends Controller
         $id = $b->translation_id;
         if ($id == 0) {
             $translation = new Translation;
-            $translation->world = $b->world;
+            $translation->word = $b->word;
             $translation->translation = $b->translation;          
 
         }else{            
             $translation = Translation::find($id);
-            $translation->world = $b->world;
+            $translation->word = $b->word;
             $translation->translation = $b->translation;
         }          
         $translation->save();
@@ -44,10 +44,10 @@ class TranslationController extends Controller
         $translation = Translation::destroy($id);        
     }
 
-    public function getWorld()
+    public function getWord()
     {
-    	$world = Translation::where('learned', 0)->first();        
-    	return view('test', ['world'=> $world]);
+    	$word = Translation::where('learned', 0)->first();        
+    	return view('test', ['word'=> $word]);
     }
 }
 
