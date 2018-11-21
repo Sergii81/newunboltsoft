@@ -40,8 +40,10 @@
 	    </div>
 
 	    <script>
-	    	
-	        $("#treeview").kendoTreeView({
+	    	$(document).ready(function () {
+
+
+	    		$("#treeview").kendoTreeView({
 	            checkboxes:  true,  
 	            check: onCheck,
 	            dataSource: [
@@ -88,6 +90,8 @@
 	            $("#result").html(message);
                 $(".continue").css('display', 'block');
 	        }
+	    });
+	        
 	    </script>
 
 	    

@@ -15,6 +15,7 @@
 <body>
         <div id="example">
             <div id="grid"></div>
+            
             <script type="text/javascript">
                 $.ajaxSetup({
                     headers: {
@@ -80,6 +81,9 @@
                     });
                 });     
             </script>
+        </div>
+        <div>
+            <a href="{{route('testShow')}}">Go to test</a>
         </div>
 
 

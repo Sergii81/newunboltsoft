@@ -43,7 +43,7 @@ class TranslationController extends Controller
         $id = $b->id;
         $translation = Translation::destroy($id);        
     }
-
+    
     public function getWord()
     {
     	$word = Translation::where('learned', 0)->first();        
